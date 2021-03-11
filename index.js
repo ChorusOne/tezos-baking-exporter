@@ -82,7 +82,7 @@ var query = async () => {
     blocks_baked_cycle.set(labels, getCurrentGaugeValue(blocks_baked_cycle, labels)+1)
   } 
 
-  let bakingRights = await fetch(`${baseUri}/chains/${args.chain}/blocks/${block}/helpers/baking_rights?delegate=${args.baker}&level=${block}&all`)
+  let bakingRights = await fetch(`${baseUri}/chains/${args.chain}/blocks/${block}/helpers/baking_rights?delegate=${args.baker}&level=${block}&all=true`)
     .then(res => res.json())
     .catch(err => console.error(err.message))
 
