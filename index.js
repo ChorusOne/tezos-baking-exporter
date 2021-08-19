@@ -61,7 +61,7 @@ var query = async () => {
     return
   last_block_processed = block
   head_block.set(labels, block) 
-  let cycle = head.metadata.level.cycle
+  let cycle = head.metadata.level_info.cycle
   if (cycle > last_cycle_processed) {
     last_cycle_processed = cycle
     head_cycle.set(labels, cycle)
