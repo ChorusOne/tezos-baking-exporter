@@ -122,7 +122,7 @@ var query = async () => {
 
   let shouldHaveEndorsed = 0
   endorsingRights.forEach(er => {
-    if (er.slots.indexOf(0) >= 0)
+    if (er.delegates.indexOf(0) >= 0)
       shouldHaveEndorsed++
   })
   let ediff = Math.abs(shouldHaveEndorsed - endorsements)
