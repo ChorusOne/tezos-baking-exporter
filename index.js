@@ -106,7 +106,7 @@ var query = async () => {
   head.operations.forEach(oplist => {
     oplist.forEach(op => {
       op.contents.forEach(c => {
-        if (c.kind === 'endorsement' && c.metadata.delegate === args.baker)
+        if (c.kind === 'attestation' && c.metadata.delegate === args.baker)
           endorsements++
       })
     })
