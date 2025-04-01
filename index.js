@@ -106,7 +106,8 @@ var query = async () => {
   head.operations.forEach(oplist => {
     oplist.forEach(op => {
       op.contents.forEach(c => {
-        if (c.kind === 'attestation' && c.metadata.delegate === args.baker)
+        // Check for both kinds of attestations (minimal change)
+        if ((c.kind === 'attestation' || c.kind === 'attestation_with_dal') && c.metadata.delegate === args.baker)
           endorsements++
       })
     })
