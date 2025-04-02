@@ -116,7 +116,7 @@ var query = async () => {
     operation_endorsements_cycle.set(labels, getCurrentGaugeValue(operation_endorsements_cycle, labels)+1)
   }
 
-  let endorsingRights = await fetch(`${baseUri}/chains/${args.chain}/blocks/${block}/helpers/endorsing_rights?delegate=${args.baker}&level=${block}`)
+  let endorsingRights = await fetch(`${baseUri}/chains/${args.chain}/blocks/${block}/helpers/attestation_rights?delegate=${args.baker}&level=${block}`)
     .then(res => res.json())
     .catch(err => console.error(err.message))
 
